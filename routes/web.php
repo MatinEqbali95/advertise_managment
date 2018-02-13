@@ -12,5 +12,40 @@
 */
 
 Route::get('/', function () {
-    return view('Admin.index');
+//    \App\User::create([
+//        'fname'=>'leila','lname'=>'eqbali','email'=>'leila.eqbali74@gmail.com','tel'=>'09367185957',
+//        'city'=>'qazvin','username'=>'leilaeqbali','password'=>bcrypt('leila12345')
+//    ]);
+    return \Illuminate\Support\Facades\Auth::user();
+    return 'hello world';
 });
+
+Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth:web','checkAdmin']],function (){
+    $this->get('/panel','AdminController@index');
+});
+
+
+Route::get('/user/panel','User\UserController@index')->middleware(['auth:web','checkUser']);
+
+
+Route::group(['namespace'=>'Auth'],function (){
+
+    // Authentication Routes...
+    $this->get('login', 'LoginController@showLoginForm')->name('login');
+    $this->post('login', 'LoginController@login');
+    $this->get('logout', 'LoginController@logout')->name('logout');
+
+    // Registration Routes...
+    $this->get('register', 'RegisterController@showRegistrationForm')->name('register');
+    $this->post('register', 'RegisterController@register');
+
+    // Password Reset Routes...
+    $this->get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    $this->post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    $this->get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
+    $this->post('password/reset', 'ResetPasswordController@reset');
+
+});
+
+
+
