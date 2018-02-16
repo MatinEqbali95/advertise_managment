@@ -5,10 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Auth;
 
-class CategoryController extends Controller
+class SubCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,6 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories=Category::whereChild('0')->latest()->paginate();
-        return view('Admin.Categories.all',compact('categories'));
     }
 
     /**
@@ -28,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('Admin.Categories.create');
+        return view('Admin.SubCategories.create');
     }
 
     /**
@@ -42,18 +38,11 @@ class CategoryController extends Controller
         $request->validate([
            'name'=>'required'
         ]);
-        Auth::user()->categories()->create([
-            'name'=>$request['name'],
+        auth()->user()->categories()->create([
+           'name'=>$request['name'],
+            'child'=>session('id')
         ]);
-
-//        \App\Category::create([
-//            'user_id'=>Auth::user()->id,
-//            'name'=>$request['name'],
-//            'child'=>'0'
-//        ]);
-
-        return redirect(route('categories.index'));
-
+        return redirect(route('subcategories.show',['id'=>session('id')]));
     }
 
     /**
@@ -64,7 +53,10 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        session(['id' =>$id]); //set session
+        $subcategories=Category::wherechild($id)->latest()->paginate();
+        return view('Admin.SubCategories.all',compact('subcategories'));
+
     }
 
     /**
@@ -75,8 +67,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category=Category::find($id);
-        return view('Admin.Categories.edit',compact('category'));
+        $subcategory=Category::find($id);
+        return view("Admin.SubCategories.edit",compact('subcategory'));
     }
 
     /**
@@ -93,10 +85,9 @@ class CategoryController extends Controller
         ]);
         $category=Category::find($id);
         $category->update([
-           'name'=>$request['name'],
-            'user_id'=>Auth::user()->id
+           'name'=>$request['name']
         ]);
-        return redirect(route('categories.index'));
+        return redirect(route('subcategories.show',['id'=>session('id')]));
     }
 
     /**
@@ -107,8 +98,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category=\App\Category::find($id);
-        $category->delete();
+//        Category::destroy($id);
+        $category=Category::find($id);
+        $category->destroy($id); //or $category->delete()
         return back();
     }
 }
