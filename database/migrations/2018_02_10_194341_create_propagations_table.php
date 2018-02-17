@@ -24,8 +24,8 @@ class CreatePropagationsTable extends Migration
             $table->string('email');
             $table->string('tel');
             $table->string('image');
-            $table->integer('view-count');
-            $table->boolean('active');
+            $table->integer('view-count')->default(0);
+            $table->boolean('active')->default(0);
             $table->dateTime('expire');
             $table->timestamps();
 

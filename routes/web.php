@@ -19,6 +19,13 @@ Route::get('/', function () {
 //    session(['key' => 'matin']);
 //    $value = session('key');
 //    return $value;
+//foreach(\App\Category::whereChild('0')->get() as $item)
+//$childs=""; $childs=\App\Category::where('child','<>','0')->whereChild($item->id)->get();
+//if($childs != "")
+//foreach($childs as $value)
+//elseif($child == "")
+
+
     return 'hello world';
 });
 
@@ -26,11 +33,13 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth:web','
     $this->get('/panel','AdminController@index');
     $this->resource('/categories','CategoryController');
     $this->resource('/subcategories','SubCategoryController');
-
 });
+Route::resource('admin/propagation','PropagationController');
+
 
 
 Route::get('/user/panel','User\UserController@index')->middleware(['auth:web','checkUser']);
+//Route::resource('user/propagation','PropagationController');
 
 
 Route::group(['namespace'=>'Auth'],function (){

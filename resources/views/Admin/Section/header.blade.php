@@ -27,7 +27,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{"/admin/propagation"}}">
                             <span data-feather="bell"></span>
                             مدیریت تبلیغات
                         </a>

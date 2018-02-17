@@ -35,4 +35,8 @@ class User extends Authenticatable
     public function categories(){
         return $this->hasMany('App\Category');
     }
+
+    public function propagation(){
+        return $this->hasMany('App\Propagation');
+    }
 }
