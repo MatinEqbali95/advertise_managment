@@ -31,6 +31,11 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth:web','
     $this->resource('/propagation','PropagationController');
     $this->get('/adminInfo','AdminController@adminInfo')->name('adminInfo');
     $this->post('/updateAdminInfo','AdminController@updateAdminInfo')->name('updateAdminInfo');
+    $this->get('/acceptedPropagation','AdminController@acceptedPropagation')->name('acceptedPropagation');
+    $this->get('/notAcceptedPropagation','AdminController@notAcceptedPropagation')->name('notAcceptedPropagation');
+    $this->PATCH('/notAcceptedPropagation/accept/{id}','AdminController@accept')->name('accept');
+    $this->get('/userManagement','AdminController@userManagement')->name('userManagement');
+    $this->delete('/userManagement/delete/{user}','AdminController@deleteUser')->name('user.destroy');
 
 });
 

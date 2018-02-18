@@ -39,7 +39,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('userManagement')}}">
                             <span data-feather="users"></span>
                             مدیریت کاربران
                         </a>
@@ -51,15 +51,27 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="x-square"></span>
+                        <a class="nav-link" href="{{route('notAcceptedPropagation')}}">
+                            <span data-feather="x-square">12</span>
 تبلیغات تایید نشده
+                            <span class="badge badge-dark">
+                                <?php
+                                $count=\App\Propagation::whereActive('0')->count();
+                                echo $count;
+                                ?>
+                            </span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('acceptedPropagation')}}">
                             <span data-feather="check-square"></span>
 تبلیغات تایید شده
+                            <span class="badge badge-dark">
+                                <?php
+                                    $count=\App\Propagation::whereActive('1')->count();
+                                    echo $count;
+                                ?>
+                            </span>
                         </a>
                     </li>
                 </ul>
