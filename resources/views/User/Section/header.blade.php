@@ -1,9 +1,9 @@
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">مدیریت تبلیغات</a>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 text-right">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0 " href="/">مدیریت تبلیغات</a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
+            <a class="nav-link" href="{{route('logout')}}">Logout</a>
         </li>
     </ul>
 </nav>
@@ -21,15 +21,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('user_propagation.index')}}">
                             <span data-feather="bell"></span>
 مدیریت تبلیغات
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('userInfo')}}">
                             <span data-feather="user"></span>
-تغییر اطلاعات کاربری
+ اطلاعات کاربری
                         </a>
                     </li>
                 </ul>

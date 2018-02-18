@@ -1,8 +1,8 @@
-@extends('Admin.master')
+@extends('User.master')
 @section('content')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 ">
         <h1 class="h2">تبلیغ جدید</h1>
-        <a href="{{route('propagation.index')}}" class="btn btn-primary">بازگشت</a>
+        <a href="{{route('user_propagation.index')}}" class="btn btn-primary">بازگشت</a>
     </div>
     @if ($errors->any())
         <div class="alert alert-danger text-right">
@@ -15,15 +15,15 @@
     @endif
 
 
-    <form action="{{route('propagation.store')}}" method="post" class="text-right" enctype="multipart/form-data">
+    <form action="{{route('user_propagation.store')}}" method="post" class="text-right" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="form-group">
                 <label for="title">عنوان تبلیغ:</label>
-                <input type="text" name="title" class="form-control" id="title">
+                <input type="text" name="title" class="form-control" id="title" value="{{old('title')}}">
             </div>
             <div class="form-group">
                 <label for="description">توضیحات:</label>
-                <textarea id="description" name="description" class="form-control"></textarea>
+                <textarea id="description" name="description" class="form-control" >{{old('description')}}</textarea>
             </div>
 
             <div class="form-row">

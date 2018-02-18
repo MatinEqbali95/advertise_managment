@@ -1,9 +1,9 @@
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">مدیریت تبلیغات</a>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 text-right">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">مدیریت تبلیغات</a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
+            <a class="nav-link" href="/logout">Logout</a>
         </li>
     </ul>
 </nav>
@@ -27,7 +27,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{"/admin/propagation"}}">
+                        <a class="nav-link" href="/admin/propagation">
                             <span data-feather="bell"></span>
                             مدیریت تبلیغات
                         </a>
@@ -45,9 +45,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('adminInfo')}}">
                             <span data-feather="user"></span>
-                            تغییر اطلاعات کاربری
+                             اطلاعات کاربری
                         </a>
                     </li>
                     <li class="nav-item">

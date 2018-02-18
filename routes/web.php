@@ -13,17 +13,12 @@
 
 Route::get('/', function () {
 //    \App\User::create([
-//        'fname'=>'leila','lname'=>'eqbali','email'=>'leila.eqbali74@gmail.com','tel'=>'09367683492',
-//        'city'=>'qazvin','username'=>'leilaeqbali','password'=>bcrypt('leila12345')
+//        'fname'=>'matin','lname'=>'eqbali','email'=>'matin.eqbali74@gmail.com','tel'=>'09367683492',
+//        'city'=>'qazvin','username'=>'matineqbali','password'=>bcrypt('matin12345')
 //    ]);
 //    session(['key' => 'matin']);
 //    $value = session('key');
 //    return $value;
-//foreach(\App\Category::whereChild('0')->get() as $item)
-//$childs=""; $childs=\App\Category::where('child','<>','0')->whereChild($item->id)->get();
-//if($childs != "")
-//foreach($childs as $value)
-//elseif($child == "")
 
 
     return 'hello world';
@@ -33,13 +28,20 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth:web','
     $this->get('/panel','AdminController@index');
     $this->resource('/categories','CategoryController');
     $this->resource('/subcategories','SubCategoryController');
+    $this->resource('/propagation','PropagationController');
+    $this->get('/adminInfo','AdminController@adminInfo')->name('adminInfo');
+    $this->post('/updateAdminInfo','AdminController@updateAdminInfo')->name('updateAdminInfo');
+
 });
-Route::resource('admin/propagation','PropagationController');
 
 
+Route::group(['prefix'=>'user','namespace'=>'User','middleware'=>['auth:web','checkUser']],function (){
+   $this->get('/panel','UserController@index');
+   $this->resource('/user_propagation','PropagationController');
+   $this->get('/userInfo','UserController@userInfo')->name('userInfo');
+   $this->post('/updateUserInfo','UserController@updateUserInfo')->name('updateUserInfo');
+});
 
-Route::get('/user/panel','User\UserController@index')->middleware(['auth:web','checkUser']);
-//Route::resource('user/propagation','PropagationController');
 
 
 Route::group(['namespace'=>'Auth'],function (){

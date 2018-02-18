@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\PropagationRequest;
 use App\Propagation;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class PropagationController extends Controller
@@ -17,9 +18,8 @@ class PropagationController extends Controller
      */
     public function index()
     {
-        $propagation=Propagation::latest()->paginate();
-
-        return view('Propagation.all',compact('propagation'));
+        $propagation=Propagation::whereUser_id(Auth::user()->id)->latest()->paginate();
+        return view('Admin.Propagation.all',compact('propagation'));
     }
 
     /**
@@ -29,7 +29,8 @@ class PropagationController extends Controller
      */
     public function create()
     {
-        return view('Propagation.create');
+        return view('Admin.Propagation.create');
+
     }
 
     /**
@@ -40,13 +41,19 @@ class PropagationController extends Controller
      */
     public function store(PropagationRequest $request)
     {
+        $input=$request->all();
         $file=$request->file('image');
         $year = Carbon::now()->year;
         $imagepath = "/upload/images/{$year}/";
         $filename = $file->getClientOriginalName(); //name.jpg
         $imagepath = $file->move(public_path($imagepath), $filename);
-        Auth::user()->propagation()->create(array_merge($request->all(),['image'=>$imagepath]));
+        $input['image']=$imagepath;
+//        $input['expire']=Carbon::now()->date
+        if (Auth::user()->level=='admin')
+            $input['active']='1';
+        Auth::user()->propagation()->create($input);
         return redirect(route('propagation.index'));
+
     }
 
     /**
@@ -69,7 +76,8 @@ class PropagationController extends Controller
     public function edit($id)
     {
         $propagation=Propagation::find($id);
-        return view('Propagation.edit',compact('propagation'));
+        return view('Admin.Propagation.edit',compact('propagation'));
+
     }
 
     /**
@@ -110,5 +118,6 @@ class PropagationController extends Controller
     {
         Propagation::destroy($id);
         return back();
+
     }
 }
