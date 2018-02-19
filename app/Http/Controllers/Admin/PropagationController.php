@@ -44,10 +44,10 @@ class PropagationController extends Controller
         $input=$request->all();
         $file=$request->file('image');
         $year = Carbon::now()->year;
-        $imagepath = "/upload/images/{$year}/";
+        $path = "/upload/images/{$year}/";
         $filename = $file->getClientOriginalName(); //name.jpg
-        $imagepath = $file->move(public_path($imagepath), $filename);
-        $input['image']=$imagepath;
+        $file->move(public_path($path), $filename);
+        $input['image']=$path.$filename;
 //        $input['expire']=Carbon::now()->date
         if (Auth::user()->level=='admin')
             $input['active']='1';
@@ -94,10 +94,10 @@ class PropagationController extends Controller
         $input=$request->all();
         if ($file){
             $year = Carbon::now()->year;
-            $imagepath = "/upload/images/{$year}/";
+            $path = "/upload/images/{$year}/";
             $filename = $file->getClientOriginalName(); //name.jpg
-            $imagepath = $file->move(public_path($imagepath), $filename);
-            $input['image']=$imagepath;
+            $file->move(public_path($path), $filename);
+            $input['image']=$path.$filename;
         }
         else
         {

@@ -41,7 +41,7 @@
             <label for="image">انتخاب تصویر:</label>
             <div class="custom-file ">
                 <input type="file"  name="image" id="image" >
-                <a href="{{$propagation->image}}" target="_blank"><img src="{{$propagation->image}}" ></a>
+                <a href="{{$propagation->image}}" target="_blank"><img src="{{$propagation->image}}" width="100" height="100"></a>
 
                 {{--<input type="file" class="custom-file-input" id="validatedCustomFile" >--}}
                 {{--<label class="custom-file-label" for="validatedCustomFile">انتخاب عکس برای تبلیغ</label>--}}

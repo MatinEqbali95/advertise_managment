@@ -61,7 +61,7 @@ class AdminController extends Controller
 
     public function userManagement()
     {
-        $users=User::latest()->paginate();
+        $users=User::whereLevel('user')->latest()->paginate();
         return view('Admin.userManagement',compact('users'));
     }
 

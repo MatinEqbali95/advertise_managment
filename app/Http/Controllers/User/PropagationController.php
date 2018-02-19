@@ -44,9 +44,9 @@ class PropagationController extends Controller
         $file=$request->file('image');
         $filename=$file->getClientOriginalName();
         $year=Carbon::now()->year;
-        $path="/upload/images/{$year}";
-        $imagepath=$file->move(public_path($path),$filename);
-        $input['image']=$imagepath;
+        $path="/upload/images/{$year}/";
+        $file->move(public_path($path),$filename);
+        $input['image']=$path.$filename;
         Auth::user()->Propagation()->create($input);
         return redirect(route('user_propagation.index'));
 
@@ -90,9 +90,9 @@ class PropagationController extends Controller
         if ($file){
             $filename=$file->getClientOriginalName();
             $year=Carbon::now()->year;
-            $path="/upload/images/{$year}";
-            $imagepath=$file->move(public_path($path),$filename);
-            $input['image']=$imagepath;
+            $path="/upload/images/{$year}/";
+            $file->move(public_path($path),$filename);
+            $input['image']=$path.$filename;
         }
         else
             $input['image']=$propagation->image;
