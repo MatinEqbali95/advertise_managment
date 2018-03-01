@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>مدیریت تبلیغات طبقه بندی شده</title>
+    <title>مدیریت تبلیغات</title>
     <link href="/css/dashboard.css" rel="stylesheet">
 </head>
 

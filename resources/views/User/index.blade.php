@@ -4,7 +4,6 @@
         <h1 class="h2">میزکار</h1>
     </div>
 
-    <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
 
 @endsection
 

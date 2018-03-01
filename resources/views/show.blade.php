@@ -86,9 +86,8 @@
             <p><span class="glyphicon glyphicon-time"></span>{{$propagation->created_at}}</p>
 
             <hr>
-
             <!-- Preview Image -->
-            <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+            <img class="img-responsive" src="{{$propagation->image}}" alt="">
 
             <hr>
             <h4 class="inline-block">شهر مربوطه: {{$propagation->city}}</h4>

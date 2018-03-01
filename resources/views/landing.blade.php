@@ -148,19 +148,18 @@
         <div class="col-md-12">
             <div class="row">
                 @foreach($propagation as $item)
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="{{$item->image}}" alt="">
-                            <div class="caption">
-                                <h4><a href="{{route('show',['id'=>$item->id])}}">{{ $item->title }}</a>
-                                </h4>
-                                <p>{{ str_limit($item->description , 120) }}</p>
-                            </div>
-                            {{--<div class="ratings">--}}
-                                {{--<p class="pull-right">{{ $article->viewCount }} بازدید</p>--}}
+                    <div class="col-sm-6 col-md-4 card-group  mb-4">
+                            <div class="card" >
+                                <img src="{{$item->image}}" alt="" class="card-img-top" height="250" id="card-image">
+                                <div class="card-body caption">
+                                    <h5 class="card-title"><a href="{{route('show',['id'=>$item->id])}}">{{ $item->title }}</a></h5>
+                                    <p class="card-text">{{ str_limit($item->description , 120) }}</p>
+                                </div>
+                                {{--<div class="ratings">--}}
+                                {{--<p class="pull-right">{{ $item->view-count }} بازدید</p>--}}
                                 {{--<p class="pull-right">4 بازدید</p>--}}
-                            {{--</div>--}}
-                        </div>
+                                {{--</div>--}}
+                            </div>
                     </div>
                 @endforeach
             </div>

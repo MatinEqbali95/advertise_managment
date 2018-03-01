@@ -282,3 +282,10 @@ a, a:before, a:after, input[type="submit"], .box, .faq-title, .metrics-blocks .b
 	transition: all .3s ease 0s;
 }
 
+@media screen and (max-width: 576px) and (min-width:366px ){
+	#card-image{
+		width: 300px;
+	}
+}
+
+

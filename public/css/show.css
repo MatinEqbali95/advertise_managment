@@ -155,3 +155,55 @@ footer {
   font-family: IRANSans !important;
 }
 
+/*start footer*/
+.footer {
+	width:100%;
+	background-color:#292929;
+	padding:10px 0 20px;
+	min-height: 200px;
+	margin-top: 60px;
+}
+.footer-center {width:674px; margin:0 auto; text-align:center;}
+.footer-center .name {margin:0 0 15px; padding:20px 0px 10px; color:#1e90de;}
+.footer-center .name a{color:#1e90de;}
+.footer-center .name b {font-weight:700;}
+.footer-center .copyright-text {color:white; font-size:13px; border-top:1px solid #47494a; margin:0px; padding-top:20px;}
+.footer-center .copyright-text a{color:#1b8edc;}
+
+
+.logos img {
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	filter: grayscale(100%);
+	opacity: 0.7;
+	-webkit-transition: opacity 0.5s, height 4s, transform 1s;
+	transition: filter 0.5s , opacity 0.5s,transform 1s ;
+}
+.logos img:hover {
+	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+	filter: grayscale(0%);
+	opacity: 1;
+	-ms-transform: translate(0px, -5px); /* IE 9 */
+	-webkit-transform: translate(0px, -5px); /* Safari */
+	transform: translate(0px, -5px);
+
+
+}
+
+.border img{
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+}
+.logos li{
+	list-style-type: none;
+	display: inline-block;
+	padding:10px;
+}
+.logos img{
+	width: 50px;
+}
+.logos{
+	padding-left: 0;
+}
+
+/*end footer*/

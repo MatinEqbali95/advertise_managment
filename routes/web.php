@@ -44,6 +44,7 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth:web','
     $this->PATCH('/notAcceptedPropagation/accept/{id}','AdminController@accept')->name('accept');
     $this->get('/userManagement','AdminController@userManagement')->name('userManagement');
     $this->delete('/userManagement/delete/{user}','AdminController@deleteUser')->name('user.destroy');
+    $this->get('/infoSiteManagement','AdminController@infoSiteManagement')->name('infoSiteManagement');
 
 });
 
