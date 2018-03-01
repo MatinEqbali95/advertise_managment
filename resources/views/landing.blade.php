@@ -154,7 +154,7 @@
                                 <img src="{{$item->image}}" alt="" class="card-img-top" height="250" id="card-image">
                                 <div class="card-body caption">
                                     <h5 class="card-title"><a href="{{route('show',['id'=>$item->id])}}">{{ $item->title }}</a></h5>
-                                    <p class="card-text">{{ str_limit($item->description , 120) }}</p>
+                                    <p class="card-text">{{ str_limit($item->description ,120) }}</p>
                                 </div>
                                 {{--<div class="ratings">--}}
                                 {{--<p class="pull-right">{{ $item->view-count }} بازدید</p>--}}
