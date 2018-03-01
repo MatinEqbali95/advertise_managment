@@ -18,6 +18,12 @@
 
 /* start of css class */
 
+p{
+	 font-size: small;
+	color: white
+
+ }
+
 .block{
 	display: block;
 }

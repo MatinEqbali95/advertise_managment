@@ -14,6 +14,10 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/show.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/fontiran.css">
+
+
 </head>
 
 <body>
@@ -29,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">مدیریت تبلیغات</a>
+            <a class="navbar-brand" href="/">مدیریت تبلیغات</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -108,23 +112,34 @@
     </div>
 
 </div>
-<!-- /.container -->
 
-<div class="container">
 
-    <hr>
 
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
-            </div>
+<!-- start footer -->
+<div id="footer" class="footer">
+    <div class="container">
+        <div class="float-right col-md-6 text-right " style="margin-top: 50px">
+            <h4 style="color: white">درباره ما</h4>
+            <p style="color: white" class="pt-2">"شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
+                "شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید""شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید""شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
+            </p>
         </div>
-    </footer>
+        <div class="float-left col-md-6 text-right " style="margin-top: 50px">
+            <h4 style="color: white">تماس با ما</h4>
+            <p style="color: white " class="pt-2">"شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
+                "شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
+                "شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
+            </p>
 
+
+        </div>
+
+
+
+    </div>
 </div>
-<!-- /.container -->
+<!-- end footer -->
+
 
 
 <script src="/js/app.js"></script>

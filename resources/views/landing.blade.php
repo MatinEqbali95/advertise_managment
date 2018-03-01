@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 
+
 </head>
 <body>
 
@@ -174,13 +175,13 @@
 <div id="footer" class="footer">
     <div class="container">
         <div class="float-right col-md-6 text-right " style="margin-top: 50px">
-            <h4 style="color: white">درباره ما</h4>
+            <h4 style="color: white;font-size: medium">درباره ما</h4>
             <p style="color: white" class="pt-2">"شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
                 "شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید""شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید""شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
             </p>
         </div>
         <div class="float-left col-md-6 text-right " style="margin-top: 50px">
-            <h4 style="color: white">تماس با ما</h4>
+            <h4 style="color: white;font-size: medium">تماس با ما</h4>
             <p style="color: white " class="pt-2">"شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
                 "شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
                 "شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
