@@ -176,15 +176,12 @@
     <div class="container">
         <div class="float-right col-md-6 text-right " style="margin-top: 50px">
             <h4 style="color: white;font-size: medium">درباره ما</h4>
-            <p style="color: white" class="pt-2">"شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
-                "شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید""شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید""شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
+            <p style="color: white" class="pt-2">"{{Storage::get('info_site/about')}}"
             </p>
         </div>
         <div class="float-left col-md-6 text-right " style="margin-top: 50px">
             <h4 style="color: white;font-size: medium">تماس با ما</h4>
-            <p style="color: white " class="pt-2">"شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
-                "شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
-                "شما می توانید از طریق عضویت در سایت تبلیغات خود را ثبت کنید"
+            <p style="color: white " class="pt-2">"{{Storage::get('info_site/call')}}"
             </p>
 
 

@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Storage;
+
 
 //Route::get('/', function () {
 //    \App\User::create([
@@ -22,6 +24,12 @@
 
 //    return view('landing');
 //    return 'hello world';
+//    $fileContents="mohsheeen";
+//    Storage::put('avatars/1.txt', $fileContents);
+//    $contents = Storage::get('avatars/1.txt');
+//return $contents;
+//    Storage::delete('avatars/1.txt');
+
 //});
 
 
@@ -45,6 +53,7 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['auth:web','
     $this->get('/userManagement','AdminController@userManagement')->name('userManagement');
     $this->delete('/userManagement/delete/{user}','AdminController@deleteUser')->name('user.destroy');
     $this->get('/infoSiteManagement','AdminController@infoSiteManagement')->name('infoSiteManagement');
+    $this->post('/updateInfoSite','AdminController@updateInfoSite')->name('updateInfoSite');
 
 });
 

@@ -7,6 +7,8 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
 
 class AdminController extends Controller
 {
@@ -73,7 +75,21 @@ class AdminController extends Controller
 
     public function infoSiteManagement()
     {
+        return view('Admin.infoSiteManagement');
+    }
 
-//        return view('Admin.infoSiteManagement');
+    public function updateInfoSite(Request $request)
+    {
+        $request->validate([
+            'about' => 'required',
+            'call' => 'required',
+        ]);
+        $about=$request->about;
+        Storage::put('info_site/about', $about);
+        $call=$request->call;
+        Storage::put('info_site/call', $call);
+        return redirect('/admin/panel');
+
+
     }
 }
